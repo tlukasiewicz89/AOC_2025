@@ -4,7 +4,6 @@ const text = fs.readFileSync("data.txt", "utf8").trim();
 const lines = text.split("\n");
 
 let current = 50;
-
 let answer = 0;
 
 const rotate = (d) => {
@@ -12,24 +11,14 @@ const rotate = (d) => {
     let distance = Number(d.slice(1));
 
     if (direction === "R"){
-        while (distance){
-            if (current === 99){
-                current = 0;
-            } else {
-                current++;
-            }
-            distance--;
+        while (distance--){
+            current = current === 99 ? 0 : current + 1
             if (current === 0) answer++;
         }
     }
     if (direction === 'L'){
-        while (distance){
-            if (current === 0){
-                current = 99;
-            } else {
-                current--;
-            }
-            distance--;
+        while (distance--){
+            current = current === 0 ? 99 : current - 1
             if (current === 0) answer++;
         }
     }
