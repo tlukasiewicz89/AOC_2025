@@ -31,6 +31,6 @@ const res = text
         return invalids;
     })
     .flat()
-    .reduce((a,b) => a+b, 0)
+    .reduce((a, b) => a + b, 0)
 
 console.log(res);
